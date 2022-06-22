@@ -29,7 +29,8 @@ Function startmenu{
     Write-Host "4) VM Creation"
     Write-Host "5) CSV User Creation"
 
-    $answer = Read-Host "Choose between 1 - 5"
+    do {$answer = Read-Host "Choose between 1 - 5"}
+    until ("1","2","3","4","5" -ccontains $answer)
 
     switch($answer) {
         '1'{
@@ -94,6 +95,7 @@ function CSVCreation{
 }
 
 Function Bruger{
+    Write-Host "Choose your csv file"
     $FileBrowser = New-Object System.Windows.Forms.OpenFileDialog -Property @{ InitialDirectory = [Environment]::GetFolderPath('Desktop')
     Filter = 'CSV File (*.csv)|*.csv' }
     $null = $FileBrowser.ShowDialog()
@@ -133,6 +135,7 @@ Function Bruger{
 }
 
 Function OU{
+    Write-Host "Choose your csv file"
     $FileBrowser = New-Object System.Windows.Forms.OpenFileDialog -Property @{ InitialDirectory = [Environment]::GetFolderPath('Desktop')
     Filter = 'CSV File (*.csv)|*.csv' }
     $null = $FileBrowser.ShowDialog()
@@ -157,6 +160,7 @@ Function OU{
 }
 
 Function Share{
+    Write-Host "Choose your csv file"
     $FileBrowser = New-Object System.Windows.Forms.OpenFileDialog -Property @{ InitialDirectory = [Environment]::GetFolderPath('Desktop')
     Filter = 'CSV File (*.csv)|*.csv' }
     $null = $FileBrowser.ShowDialog()
