@@ -3,7 +3,7 @@ Powershell Minitool. Create: CSV File, OU, Users, SMB Share and VM's
 
 Remember this tool is still under work and there will come more updates.
 
-Use this on a windows server.
+Use this on a windows server since some of the things use the activedirecotry module.
 
 If you have any problems open a issue
 
