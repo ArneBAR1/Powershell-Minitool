@@ -90,8 +90,7 @@ function CSVCreation{
         $csvfile | foreach { Add-Content -Path "$($DirecPath.SelectedPath)\$($csvName).csv" -Value $_}
         Write-Host "CSV created: $($DirecPath.SelectedPath)\$($csvName).csv"
     }
-
-
+    startmenu
 }
 
 Function Bruger{
@@ -132,6 +131,7 @@ Function Bruger{
                     -PasswordNeverExpires $true 
         }
     }
+    startmenu
 }
 
 Function OU{
@@ -157,6 +157,7 @@ Function OU{
                 -path $path
         }
     }
+    startmenu
 }
 
 Function Share{
@@ -176,6 +177,7 @@ Function Share{
         New-SmbShare -Name $User -FullAccess "$($env:USERDNSDOMAIN)\$($User)"  -Path $Path  -FolderEnumerationMode Unrestricted
         Grant-FileShareAccess -Name $User -AccessRight "Full" -AccountName $User
     }
+    startmenu
 }
 
 Function VMOP{
@@ -206,6 +208,8 @@ Function VMOP{
     Start-Sleep -Seconds 2
 
     Start-VMX -VMXName $vmxname -Path "$($ChangePath.SelectedPath)\$($vmxname)" -config "$($ChangePath.SelectedPath)\$($vmxname)\$($vmxname).vmx"
+
+    startmenu
 }
 
 startmenu
