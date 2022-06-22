@@ -51,6 +51,22 @@ Function startmenu{
     }
 }
 
+function OUCreation {
+    Write-Host "Choose where you wanna create the csv file"
+
+    $DirecPath = New-Object System.Windows.Forms.FolderBrowserDialog
+    $null = $DirecPath.ShowDialog((New-Object System.Windows.Forms.Form -Property @{TopMost = $true }))
+
+    $csvName = Read-Host "Choose csv name"
+
+    New-Item -Path $DirecPath.SelectedPath -Name "$($csvName).csv"
+
+    Write-Host $DirecPath.SelectedPath
+
+    #Not done will soon come
+
+}
+
 function CSVCreation{
 
     Write-Host "Choose where you wanna create the csv file"
